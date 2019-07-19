@@ -301,6 +301,9 @@ template {
 [hidden] {
   display: none; }
 
+*:focus {
+  outline: none; }
+
 html {
   font-size: 10px;
   color: #fff;
@@ -341,7 +344,8 @@ body {
     text-align: center; }
 
 .input-with-label {
-  margin-bottom: 2.5rem; }
+  margin-bottom: 2.5rem;
+  position: relative; }
 
 .input {
   display: -webkit-box;
@@ -389,9 +393,10 @@ body {
       -ms-flex-item-align: center;
           align-self: center;
   height: 4rem;
-  margin-top: 0.5rem;
+  margin-top: 2rem;
   -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
-          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4); }
+          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+  cursor: pointer; }
 
 .registration__form {
   display: -webkit-box;
@@ -403,3 +408,10 @@ body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column; }
+
+.error {
+  position: absolute;
+  bottom: -25px;
+  right: 0;
+  margin: 0;
+  color: #980606; }

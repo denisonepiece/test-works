@@ -18,12 +18,6 @@ gulp.task('sass', function() {
       .pipe(browserSync.stream());
 });
 
-gulp.task('js', function() {
-  return gulp.src('app/js/**/*.js')
-      .pipe(concat('main.js'))
-      .pipe(gulp.dest('app'));
-});
-
 gulp.task('autoprefixer', () =>
   gulp.src('app/css/main.css')
       .pipe(autoprefixer({
@@ -33,13 +27,13 @@ gulp.task('autoprefixer', () =>
       .pipe(gulp.dest('css'))
 );
 
-gulp.task('serve', gulp.series(['sass', 'js'], function() {
+gulp.task('serve', gulp.series(['sass'], function() {
   browserSync.init({
     server: 'app/',
   });
 
   gulp.watch('app/sass/**/*.sass', gulp.series('sass'));
-  gulp.watch('app/js/**/*.js', gulp.series('js'));
+  gulp.watch('app/js/**/*.js');
   gulp.watch('app/*.html').on('change', browserSync.reload);
 }));
 

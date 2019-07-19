@@ -17,33 +17,41 @@
 <body>
 <div class="registration">
     <h1>Регистрация</h1>
-    <form class="registration__form">
+    <form class="registration__form" autocomplete="off">
         <div class="input-with-label">
             <p class="label">Имя</p>
-            <input type="text" class="input">
+            <input id="first-name" type="text" class="input" autocomplete="off">
+            <p class="error"></p>
         </div>
         <div class="input-with-label">
             <p class="label">Фамилия</p>
-            <input type="text" class="input" >
+            <input id="last-name" type="text" class="input" autocomplete="off">
+            <p class="error"></p>
         </div>
         <div class="input-with-label">
             <p class="label">E-mail</p>
-            <input type="email" class="input" novalidate>
+            <input type="email" class="input" autocomplete="off">
+            <p class="error"></p>
         </div>
         <div class="input-with-label">
             <p class="label">Пароль</p>
             <input type="password" class="input">
+            <p class="error"></p>
         </div>
         <div class="input-with-label">
             <p class="label">Подтверждение пароля</p>
             <input type="password" class="input">
+            <p class="error"></p>
         </div>
         <div class="input-with-label">
             <p class="label">Дата рождения</p>
             <input type="date" class="input">
+            <p class="error"></p>
         </div>
-        <button class="btn" type="submit">Отправить</button>
+        <button id="submitBtn" class="btn" type="submit">Отправить</button>
     </form>
 </div>
+
+<script src="js/validateFrom.js"></script>
 </body>
 </html>
